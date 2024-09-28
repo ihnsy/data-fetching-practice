@@ -25,15 +25,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className='wrapper'>
-      <div className='leftPane'>
+    <div className="wrapper">
+      <div className="leftPane">
         <Left
           posts={posts}
           selectedPostId={selectedPostId}
           onSelectPost={setSelectedPostId}
         />
       </div>
-      <div className='rightPane'>
+      <div className="rightPane">
         {selectedPostId && <Right postId={selectedPostId} />}
       </div>
     </div>

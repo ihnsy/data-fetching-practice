@@ -37,9 +37,11 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
       <ul>
         {comments.map((comment) => (
           <li key={comment.id}>
-            <b>작성자: {comment.name} ({comment.email})</b>
+            <b>
+              작성자: {comment.name} ({comment.email})
+            </b>
             <p>{comment.body}</p>
-            </li>
+          </li>
         ))}
       </ul>
     </>
