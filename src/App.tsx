@@ -1,4 +1,4 @@
-import './reset.css';
+import './App.css';
 
 import React, { useEffect, useState } from 'react';
 
@@ -25,15 +25,15 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ width: '40%' }}>
+    <div className='wrapper'>
+      <div className='leftPane'>
         <Left
           posts={posts}
           selectedPostId={selectedPostId}
           onSelectPost={setSelectedPostId}
         />
       </div>
-      <div style={{ width: '60%' }}>
+      <div className='rightPane'>
         {selectedPostId && <Right postId={selectedPostId} />}
       </div>
     </div>

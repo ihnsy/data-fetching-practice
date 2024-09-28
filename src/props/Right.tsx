@@ -1,3 +1,5 @@
+import '../App.css';
+
 import React, { useEffect, useState } from 'react';
 
 import { Comment, Post } from '../interface';
@@ -28,16 +30,19 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
   }, [postId]);
 
   return (
-    <div>
-      <h2>{post.title}</h2>
+    <>
+      <h2>내용</h2>
       <p>{post.body}</p>
-      <h3>댓글</h3>
+      <h2>댓글</h2>
       <ul>
         {comments.map((comment) => (
-          <li key={comment.id}>{comment.body}</li>
+          <li key={comment.id}>
+            <b>작성자: {comment.name} ({comment.email})</b>
+            <p>{comment.body}</p>
+            </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 

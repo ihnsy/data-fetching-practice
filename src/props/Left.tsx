@@ -1,3 +1,5 @@
+import '../App.css';
+
 import React from 'react';
 
 import { Post } from '../interface';
@@ -14,7 +16,7 @@ const Left: React.FC<PostListProps> = ({
   onSelectPost,
 }) => {
   return (
-    <div>
+    <>
       <h2>포스트 목록</h2>
       <ul>
         {posts.map((post) => (
@@ -23,16 +25,13 @@ const Left: React.FC<PostListProps> = ({
             onClick={() => {
               onSelectPost(post.id);
             }}
-            style={{
-              cursor: 'pointer',
-              fontWeight: post.id === selectedPostId ? 'bold' : 'normal',
-            }}
+            className={`postItem ${post.id === selectedPostId ? 'selected' : ''}`}
           >
-            {post.id}.&nbsp{post.title}
+            {post.id}.&nbsp;{post.title}
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 };
 
