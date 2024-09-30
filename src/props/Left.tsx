@@ -1,6 +1,6 @@
 import '../App.css';
 
-import { Post } from '../interface';
+import type { Post } from '../interface';
 
 interface PostListProps {
   posts: Post[];

@@ -9,7 +9,7 @@ interface PostDetailProps {
 }
 
 const Right: React.FC<PostDetailProps> = ({ postId }) => {
-  const [post, setPost] = useState<Post[]>([]);
+  const [post, setPost] = useState<Post | null>(null);
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
