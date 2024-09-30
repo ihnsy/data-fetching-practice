@@ -2,7 +2,7 @@ import './App.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { Post } from './interface';
+import type { Post } from './interface';
 import Left from './props/Left';
 import Right from './props/Right';
 

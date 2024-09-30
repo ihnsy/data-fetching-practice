@@ -2,7 +2,7 @@ import '../App.css';
 
 import React, { useEffect, useState } from 'react';
 
-import { Comment, Post } from '../interface';
+import type { Comment, Post } from '../interface';
 
 interface PostDetailProps {
   postId: number;
