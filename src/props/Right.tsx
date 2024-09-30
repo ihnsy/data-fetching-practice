@@ -9,7 +9,8 @@ interface PostDetailProps {
 }
 
 const Right: React.FC<PostDetailProps> = ({ postId }) => {
-  const [post, setPost] = useState<Post | null>(null);
+  // 1. post를 배열이 아닌 단일 객체로 설정 (Post | null)
+  const [post, setPost] = useState<Post | null>(null); 
   const [comments, setComments] = useState<Comment[]>([]);
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
       const postData = await postResponse.json();
       const commentsData = await commentsResponse.json();
 
-      setPost(postData);
+      setPost(postData); // 2. postData를 단일 객체로 저장
       setComments(commentsData);
     };
 
@@ -32,7 +33,9 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
   return (
     <>
       <h2>내용</h2>
-      <p>{post.body}</p>
+      {/* 3. post가 null이 아닐 때만 렌더링 */}
+      {post ? <p>{post.body}</p> : <p>Loading...</p>}
+      
       <h2>댓글</h2>
       <ul>
         {comments.map((comment) => (
