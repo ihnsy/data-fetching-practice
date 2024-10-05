@@ -16,13 +16,13 @@ const App: React.FC = () => {
       const response = await fetch(
         'https://jsonplaceholder.typicode.com/posts',
       );
-      const data = (await response.json() ) as Post[];
+      const data = (await response.json()) as Post[];
       setPosts(data);
       setSelectedPostId(data[0]?.id ?? null);
     };
 
     fetchPosts().catch(() => {
-      alert('뭔가 실패함')
+      alert('뭔가 실패함');
     });
   }, []);
 
@@ -36,7 +36,7 @@ const App: React.FC = () => {
         />
       </div>
       <div className="rightPane">
-        {selectedPostId !==null && <Right postId={selectedPostId} />}
+        {selectedPostId !== null && <Right postId={selectedPostId} />}
       </div>
     </div>
   );
