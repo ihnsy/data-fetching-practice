@@ -20,8 +20,8 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`),
       ]);
 
-      const postData = await postResponse.json() as Post;
-      const commentsData = await commentsResponse.json() as Comment[];
+      const postData = (await postResponse.json()) as Post;
+      const commentsData = (await commentsResponse.json()) as Comment[];
       setPost(postData); // 2. postData를 단일 객체로 저장
       setComments(commentsData);
     };
@@ -32,7 +32,7 @@ const Right: React.FC<PostDetailProps> = ({ postId }) => {
   return (
     <>
       <h2>내용</h2>
-      {(post != null) ? <p>{post.body}</p> : <p>Loading...</p>}
+      {post != null ? <p>{post.body}</p> : <p>Loading...</p>}
 
       <h2>댓글</h2>
       <ul>
